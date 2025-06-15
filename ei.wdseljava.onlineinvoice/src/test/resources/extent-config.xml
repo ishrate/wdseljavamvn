@@ -1,0 +1,12 @@
+<extent-config>
+    <documentTitle>Test Execution Report</documentTitle>
+    <reportName>Automation Test Results</reportName>
+    <theme>standard</theme>
+    <enableSystemInfo>false</enableSystemInfo>
+    <enableTimeline>false</enableTimeline>
+    <reportLayout>STANDARD</reportLayout>
+    <chart>
+        <enabled>true</enabled>
+        <type>pie</type>
+    </chart>
+</extent-config>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-13T15:52:06 AEST" name="OnlineInvoice Test Suite" finished-at="2025-06-13T15:52:13 AEST" duration-ms="6846">
+    <groups>
+    </groups>
+    <test started-at="2025-06-13T15:52:06 AEST" name="All Tests" finished-at="2025-06-13T15:52:13 AEST" duration-ms="6846">
+      <class name="com.ei.wdseljava.onlineinvoice.tests.MyFirstTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ei.wdseljava.onlineinvoice.tests.MyFirstTest@7a35b0f5]" started-at="2025-06-13T15:52:06 AEST" name="setup" finished-at="2025-06-13T15:52:07 AEST" duration-ms="888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ei.wdseljava.onlineinvoice.tests.MyFirstTest@7a35b0f5]" started-at="2025-06-13T15:52:07 AEST" name="testLogin" data-provider="loginData" finished-at="2025-06-13T15:52:13 AEST" duration-ms="5934" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Joseph_vandermeer@worksafe.vic.gov.au]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[WSVtest1!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ei.wdseljava.onlineinvoice.tests.MyFirstTest@7a35b0f5]" started-at="2025-06-13T15:52:13 AEST" name="tearDown" finished-at="2025-06-13T15:52:13 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ei.wdseljava.onlineinvoice.tests.MyFirstTest -->
+    </test> <!-- All Tests -->
+  </suite> <!-- OnlineInvoice Test Suite -->
+</testng-results>

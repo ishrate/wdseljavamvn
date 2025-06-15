@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<search>
+    <datafield1>Cheese</datafield1>
+    <datafield2>Milk</datafield2>
+    <datafield3>Butter</datafield3>
+    <!-- You can have up to 10 data fields -->
+</search>

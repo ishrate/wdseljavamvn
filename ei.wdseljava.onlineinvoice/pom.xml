@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ei.wdseljava.onlineinvoice</groupId>
+    <artifactId>ei.wdseljava.onlineinvoice</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.33.0</version>
+        </dependency>
+        
+        <dependency>
+    		<groupId>org.seleniumhq.selenium</groupId>
+    		<artifactId>selenium-devtools-v137</artifactId>
+    		<version>4.33.0</version>
+		</dependency>
+
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.1</version>
+        </dependency>
+
+        <!-- WebDriverManager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <!--<version>5.2.1</version>-->
+            <version>6.1.0</version>
+        </dependency>
+        
+         <!-- SLF4J API (If using SLF4J with Log4j2 binding) -->
+   		 <dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-api</artifactId>
+        	<version>1.7.32</version> <!-- Ensure this is the correct version -->
+    	 </dependency>
+
+    	<!-- Log4j2 SLF4J Binding -->
+    	<!--<dependency>
+        	<groupId>org.apache.logging.log4j</groupId>
+        	<artifactId>log4j-slf4j-impl</artifactId>
+        	<version>2.19.0</version>  Use the latest Log4j2 version 
+    	</dependency>
+-->
+        <!-- Log4j2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.19.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.19.0</version>
+        </dependency>
+        
+    
+   		 <!-- JavaMail API -->
+    	<dependency>
+        	<groupId>javax.mail</groupId>
+        	<artifactId>javax.mail-api</artifactId>
+        	<version>1.6.2</version>
+    	</dependency>
+
+    	 <!-- Jakarta Activation Framework (JAF) -->
+    	<dependency>
+        	<groupId>jakarta.activation</groupId>
+        	<artifactId>jakarta.activation-api</artifactId>
+        	<version>2.0.1</version> <!-- Latest version of JAF -->
+    	</dependency>
+
+    	<!-- JavaMail Dependency -->
+   	 	<dependency>
+        	<groupId>com.sun.mail</groupId>
+        	<artifactId>javax.mail</artifactId>
+        	<version>1.6.2</version> <!-- Use the latest JavaMail version -->
+    	</dependency>
+
+        <!-- Extent Reports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+        
+        <dependency>
+        	<groupId>org.slf4j</groupId>
+       		<artifactId>slf4j-simple</artifactId>
+        	<version>1.7.32</version> <!-- Or the latest version -->
+    	</dependency>
+
+        <!-- Grafana Reporter (InfluxDB Integration) -->
+        <dependency>
+            <groupId>org.influxdb</groupId>
+            <artifactId>influxdb-java</artifactId>
+            <version>2.21</version>
+        </dependency>
+
+        <!-- Oracle JDBC -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>19.8.0.0</version>
+        </dependency>
+
+        <!-- Apache POI for Excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+
+        <!-- Jackson for XML Parsing -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+        
+       
+            <!-- Maven Dependency Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/libs
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Jar Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+
+            <!-- Maven Assembly Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            
+             <!-- Resources for the Test -->
+        
+        </plugins>
+        
+        <resources>
+    <!-- default main resources -->
+    		<resource>
+     			 <directory>src/main/resources</directory>
+   			</resource>
+    <!-- include test resources in the main build -->
+    		<resource>
+      			<directory>src/test/resources</directory>
+      				<includes>
+        				<include>test-data.xml</include> <!-- or other files needed -->
+      				</includes>
+      			<filtering>false</filtering>
+    		</resource>
+  		</resources>
+    </build>
+</project>

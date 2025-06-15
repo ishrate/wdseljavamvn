@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="OnlineInvoice Test Suite">
+
+	<listeners>
+        <!-- Register the ExtentTestNGListener to capture test lifecycle events -->
+        <listener class-name="com.ei.wdseljava.onlineinvoice.listeners.ExtentTestNGListener"/>
+    </listeners>
+    <test name="All Tests">
+        <classes>
+           <!--  <class name="com.ei.wdseljava.onlineinvoice.tests.XMLDataTest"/> -->
+            <!-- <class name="com.ei.wdseljava.onlineinvoice.tests.OracleDataTest"/>  -->
+            
+            <class name="com.ei.wdseljava.onlineinvoice.tests.MyFirstTest"/> 
+          
+        <!--  <class name="com.ei.wdseljava.onlineinvoice.tests.GoogleSearchTest"/>  -->
+        </classes>
+    </test>
+</suite>
