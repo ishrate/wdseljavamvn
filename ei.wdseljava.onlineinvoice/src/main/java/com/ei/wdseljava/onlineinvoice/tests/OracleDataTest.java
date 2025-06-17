@@ -1,11 +1,15 @@
 package com.ei.wdseljava.onlineinvoice.tests;
 
+import org.testng.Assert;
+//import org.apache.logging.log4j.core.util.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.ei.wdseljava.onlineinvoice.utils.OracleDBUtil;
 
 import static org.testng.Assert.assertTrue;
+
+import java.util.Map;
 
 public class OracleDataTest {
 
@@ -38,7 +42,7 @@ public class OracleDataTest {
         };
     }
     
-    @Test(dataProvider = "invoiceData", enabled = true)
+    @Test(dataProvider = "invoiceData2", enabled = false)
     public void testDatabaseData(int invoiceId) {
         // Get the Invoice data (Status and Amount) for the given Invoice ID
         System.out.println("Searching Invoice with ID: " + invoiceId);
@@ -53,6 +57,31 @@ public class OracleDataTest {
         // Add assertion for testing (optional, depending on your needs)
        // assertTrue(result.size() > 0, "No invoice data was retrieved for Invoice ID: " + invoiceId);
     }
+    
+    // Test method to validate invoice details for a given invoice ID
+    @Test(dataProvider = "invoiceData", enabled = true)
+    public void testInvoiceData(int invoiceId) {
+        // Fetch the invoice details from the database using the provided invoice ID
+        Map<String, String> invoiceDetails = OracleDBUtil.getInvoiceDetailsById(invoiceId);
+
+        // Assert that all required fields are not null or empty
+        Assert.assertNotNull(invoiceDetails.get("InvoicePayeeType"), "Invoice Payee Type is null for Invoice ID: " + invoiceId);
+        Assert.assertNotNull(invoiceDetails.get("InvoiceStatus"), "Invoice Status is null for Invoice ID: " + invoiceId);
+        Assert.assertNotNull(invoiceDetails.get("ClaimNumber"), "Claim Number is null for Invoice ID: " + invoiceId);
+        Assert.assertNotNull(invoiceDetails.get("InvoiceSubmittedDate"), "Invoice Submitted Date is null for Invoice ID: " + invoiceId);
+
+        // Example of a more specific assertion (based on expected values, you can modify this)
+        System.out.println("Invoice ID: " + invoiceId);
+        System.out.println("Invoice Payee Type: " + invoiceDetails.get("InvoicePayeeType"));
+        System.out.println("Invoice Status: " + invoiceDetails.get("InvoiceStatus"));
+        System.out.println("Claim Number: " + invoiceDetails.get("ClaimNumber"));
+        System.out.println("Invoice Submitted Date: " + invoiceDetails.get("InvoiceSubmittedDate"));
+
+        // You can also add specific assertions based on expected values like:
+        // Assert.assertEquals(invoiceDetails.get("InvoiceStatus"), "Paid", "Invoice status mismatch for Invoice ID: " + invoiceId);
+    }
+
+
 
     @DataProvider(name = "invoiceData")
     public Object[][] getInvoiceData() {

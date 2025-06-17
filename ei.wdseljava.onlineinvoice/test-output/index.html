@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-OnlineInvoice_Test_Suite" class="navigator-link ">
-                    <span>C:\Arc\src\test\resources\testng.xml</span>
+                    <span>C:\MyGit\wdseljavamvn\ei.wdseljava.onlineinvoice\src\test\resources\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-OnlineInvoice_Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-OnlineInvoice_Test_Suite" title="com.ei.wdseljava.onlineinvoice.tests.MyFirstTest" class="method navigator-link" hash-for-method="testLogin(https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login, Joseph_vandermeer@worksafe.vic.gov.au, WS...)">testLogin(https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login, Joseph_vandermeer@worksafe.vic.gov.au, WS...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-OnlineInvoice_Test_Suite" title="com.ei.wdseljava.onlineinvoice.tests.OracleDataTest" class="method navigator-link" hash-for-method="testInvoiceData(20454801)">testInvoiceData(20454801)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-OnlineInvoice_Test_Suite -->
@@ -121,15 +121,15 @@
           <div class="suite-OnlineInvoice_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.ei.wdseljava.onlineinvoice.tests.MyFirstTest</span>
+              <span class="class-name">com.ei.wdseljava.onlineinvoice.tests.OracleDataTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testLogin(https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login, Joseph_vandermeer@worksafe.vic.gov.au, WS...)">
-                  </a> <!-- testLogin(https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login, Joseph_vandermeer@worksafe.vic.gov.au, WS...) -->
-                  <span class="method-name">testLogin</span>
-                  <span class="parameters">(https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login,Joseph_vandermeer@worksafe.vic.gov.au,WSVtest1!)</span>
+                  <a name="testInvoiceData(20454801)">
+                  </a> <!-- testInvoiceData(20454801) -->
+                  <span class="method-name">testInvoiceData</span>
+                  <span class="parameters">(20454801)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel OnlineInvoice_Test_Suite -->
         <div panel-name="test-xml-OnlineInvoice_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Arc\src\test\resources\testng.xml</span>
+            <span class="header-content">C:\MyGit\wdseljavamvn\ei.wdseljava.onlineinvoice\src\test\resources\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -149,7 +149,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;All Tests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.ei.wdseljava.onlineinvoice.tests.MyFirstTest&quot;/&gt;
+      &lt;class name=&quot;com.ei.wdseljava.onlineinvoice.tests.OracleDataTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- All Tests --&gt;
 &lt;/suite&gt; &lt;!-- OnlineInvoice Test Suite --&gt;
@@ -191,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testLogin')
-data.setCell(0, 2, 'com.ei.wdseljava.onlineinvoice.tests.MyFirstTest')
-data.setCell(0, 3, 5934);
+data.setCell(0, 1, 'testInvoiceData')
+data.setCell(0, 2, 'com.ei.wdseljava.onlineinvoice.tests.OracleDataTest')
+data.setCell(0, 3, 489);
 window.suiteTableData['OnlineInvoice_Test_Suite']= { tableData: data, tableDiv: 'times-div-OnlineInvoice_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 489 ms</span>
               <div id="times-div-OnlineInvoice_Test_Suite">
               </div> <!-- times-div-OnlineInvoice_Test_Suite -->
             </div> <!-- times-div -->
@@ -213,9 +213,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-OnlineInvoice_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.ei.wdseljava.onlineinvoice.tests.OracleDataTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testTempusData</span>
+                <br/>
+                <span class="ignored-method-name">testDatabaseData</span>
+                <br/>
+                <span class="ignored-method-name">testDatabaseData</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-OnlineInvoice_Test_Suite" class="panel">
@@ -224,19 +235,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.ei.wdseljava.onlineinvoice.tests.MyFirstTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">setup</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              <div class="chronological-class-name">com.ei.wdseljava.onlineinvoice.tests.OracleDataTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testLogin(https://payments-qa.nonprodcde.wpp.whitecoat.com.au/login, Joseph_vandermeer@worksafe.vic.gov.au, WS...)</span>
-                <span class="method-start">903 ms</span>
+                <span class="method-name">testInvoiceData(20454801)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">6842 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

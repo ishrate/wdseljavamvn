@@ -2,14 +2,16 @@ package com.ei.wdseljava.onlineinvoice.utils;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ei.wdseljava.onlineinvoice.config.ConfigProperties;
 
 public class OracleDBUtil {
 
     public static Connection getConnection() throws SQLException {
-    	 System.setProperty("oracle.net.tns_admin", "C:\\3PP\\Wallet_AUTSELWEBJAVEXT");
+    	 //System.setProperty("oracle.net.tns_admin", "C:\\3PP\\Wallet_AUTSELWEBJAVEXT");
         String url = ConfigProperties.getProperty("db.url");
         String username = ConfigProperties.getProperty("db.username");
         String password = ConfigProperties.getProperty("db.password");
@@ -79,5 +81,32 @@ public class OracleDBUtil {
 
         return result;
     }
+ // Method to fetch invoice details based on the invoice ID
+    public static Map<String, String> getInvoiceDetailsById(int invoiceId) {
+        Map<String, String> invoiceDetails = new HashMap<>();
+
+        String query = "SELECT INVOICE_PAYEE_TYPE, INVOICE_STATUS, CLAIM_NBR, INVOICE_SUBMITTED_DATE FROM STD_INVOICE WHERE INVOICE_ID = ?";
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, invoiceId);  // Setting the invoice ID parameter
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                invoiceDetails.put("InvoicePayeeType", rs.getString("INVOICE_PAYEE_TYPE"));
+                invoiceDetails.put("InvoiceStatus", rs.getString("INVOICE_STATUS"));
+                invoiceDetails.put("ClaimNumber", rs.getString("CLAIM_NBR"));
+                invoiceDetails.put("InvoiceSubmittedDate", rs.getString("INVOICE_SUBMITTED_DATE"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return invoiceDetails;
+    }
 }
+
+
 

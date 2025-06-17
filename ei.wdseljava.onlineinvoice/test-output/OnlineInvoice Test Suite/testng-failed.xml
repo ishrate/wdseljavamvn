@@ -6,13 +6,11 @@
   </listeners>
   <test thread-count="5" name="All Tests(failed)">
     <classes>
-      <class name="com.ei.wdseljava.onlineinvoice.tests.MyFirstTest">
+      <class name="com.ei.wdseljava.onlineinvoice.tests.OracleDataTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="testLogin" invocation-numbers="0"/>
-          <include name="setup"/>
+          <include name="testInvoiceData" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.ei.wdseljava.onlineinvoice.tests.MyFirstTest -->
+      </class> <!-- com.ei.wdseljava.onlineinvoice.tests.OracleDataTest -->
     </classes>
   </test> <!-- All Tests(failed) -->
 </suite> <!-- Failed suite [OnlineInvoice Test Suite] -->

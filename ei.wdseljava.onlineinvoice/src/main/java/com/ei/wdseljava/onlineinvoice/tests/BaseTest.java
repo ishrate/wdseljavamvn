@@ -23,9 +23,9 @@ public class BaseTest {
     @BeforeTest
     public void setup() {
         // Set up ChromeDriver using WebDriverManager
-        //WebDriverManager.chromedriver().setup();  // WebDriverManager takes care of downloading ChromeDriver
+      
         //WebDriverManager.chromedriver().clearResolutionCache();
-    	System.setProperty("oracle.net.tns_admin", "C:\\3PP\\Wallet_AUTSELWEBJAVEXT");
+    	//can System.setProperty("oracle.net.tns_admin", "C:\\3PP\\Wallet_AUTSELWEBJAVEXT");
         WebDriverManager.chromedriver().driverVersion("137.0.7151.69").setup(); 
         System.out.println("WebDriverManager ChromeDriver Path: " + System.getProperty("webdriver.chrome.driver"));
         // Initialize ChromeDriver
