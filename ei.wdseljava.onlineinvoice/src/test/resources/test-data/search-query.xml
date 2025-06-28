@@ -3,5 +3,12 @@
     <datafield1>Cheese</datafield1>
     <datafield2>Milk</datafield2>
     <datafield3>Butter</datafield3>
+    <datafield4>Yogurt</datafield4>
+    <datafield5>Ice Cream</datafield5>
+    <datafield6>Cheddar</datafield6>
+    <datafield7>Parmesan</datafield7>
+    <datafield8>Gouda</datafield8>
+    <datafield9>Brie</datafield9>
+    <datafield10>Camembert</datafield10>
     <!-- You can have up to 10 data fields -->
 </search>

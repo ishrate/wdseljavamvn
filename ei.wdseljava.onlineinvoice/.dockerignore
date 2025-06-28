@@ -1,0 +1,18 @@
+# Ignore Maven target folders
+target/
+
+# Ignore local configuration files
+.git/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore test output folders
+test-output/
+
+# Ignore logs
+logs/
+
+# Ignore Maven wrapper files
+.mvn/

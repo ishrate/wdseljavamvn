@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [OnlineInvoice Test Suite]">
+<suite name="Failed suite [Selenium Only Suite]">
   <listeners>
     <listener class-name="com.ei.wdseljava.onlineinvoice.listeners.ExtentTestNGListener"/>
   </listeners>
-  <test thread-count="5" name="All Tests(failed)">
+  <test thread-count="5" name="Selenium Tests(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="runner" value="selenium"/>
     <classes>
       <class name="com.ei.wdseljava.onlineinvoice.tests.MyFirstTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testLogin" invocation-numbers="0"/>
-          <include name="setup"/>
+          <include name="setUp"/>
+          <include name="invoiceEntryTest" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.ei.wdseljava.onlineinvoice.tests.MyFirstTest -->
     </classes>
-  </test> <!-- All Tests(failed) -->
-</suite> <!-- Failed suite [OnlineInvoice Test Suite] -->
+  </test> <!-- Selenium Tests(failed) -->
+</suite> <!-- Failed suite [Selenium Only Suite] -->

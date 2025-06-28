@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testdata>
+    <entry>
+        <practice>PURE SKIN CLINIC PTY LTD</practice>
+        <practitioner>Anthony Physio</practitioner>
+        <patient>Test</patient>
+        <item>AP001</item>
+    </entry>
+    <entry>
+        <practice>WSV GP</practice>
+        <practitioner>Dr. Smith</practitioner>
+        <patient>Jane Roe</patient>
+        <item>BP002</item>
+    </entry>
+</testdata>

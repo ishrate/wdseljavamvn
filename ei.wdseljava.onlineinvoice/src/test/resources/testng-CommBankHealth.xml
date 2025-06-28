@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CommBank Smart Health" thread-count="1">
+    <listeners>
+        <listener class-name="com.ei.pwwdseljava.onlineinvoice.listeners.ExtentTestNGListener"/>
+    </listeners>
+
+    <test name="CommBank Health Invoice Submit Process Test">
+        <description>Quote and Invoice Submit and Process Test</description>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="runner" value="selenium"/>
+        <parameter name="entryIndex" value="0"/>
+        <classes>
+            <class name="com.ei.pwwdseljava.onlineinvoice.tests.CommBankHealth_Test"/>
+           <!-- <class name="com.ei.wdseljava.onlineinvoice.tests.SubmitInvoiceTestCBH"/>-->
+        </classes>
+    </test>
+</suite>

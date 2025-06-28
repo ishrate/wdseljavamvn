@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="OnlineInvoice Test Suite">
+<suite name="OnlineInvoice Test Suite" parallel="tests" thread-count="2">
 
-	<listeners>
-        <!-- Register the ExtentTestNGListener to capture test lifecycle events -->
-        <listener class-name="com.ei.wdseljava.onlineinvoice.listeners.ExtentTestNGListener"/>
+    <listeners>
+        <!-- Register Extent report listener -->
+        <listener class-name="com.ei.pwwdseljava.onlineinvoice.listeners.ExtentTestNGListener"/>
     </listeners>
-    <test name="All Tests">
+
+    <!-- Selenium WebDriver tests -->
+    <test name="Selenium Test">
+        <description>Tests using Selenium WebDriver</description>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="runner" value="selenium"/>
+        <parameter name="entryIndex" value="all"/> <!-- Add this parameter to control which data set is used -->
         <classes>
-           <!--  <class name="com.ei.wdseljava.onlineinvoice.tests.XMLDataTest"/> -->
-            <!-- <class name="com.ei.wdseljava.onlineinvoice.tests.OracleDataTest"/>  -->
-            
-            <class name="com.ei.wdseljava.onlineinvoice.tests.MyFirstTest"/> 
-          
-        <!--  <class name="com.ei.wdseljava.onlineinvoice.tests.GoogleSearchTest"/>  -->
+            <class name="com.ei.pwwdseljava.onlineinvoice.tests.CommBankHealth_Test"/>
+            <class name="com.ei.pwwdseljava.onlineinvoice.tests.SubmitInvoiceTestCBH"/>
+            <!-- Add more Selenium test classes here if needed -->
         </classes>
     </test>
+
+    <!-- Playwright tests -->
+    <test name="Playwright Test">
+        <description>Tests using Playwright</description>
+        <parameter name="browser" value="chromium"/> <!-- or 'firefox', 'webkit' -->
+        <parameter name="runner" value="playwright"/>
+        <classes>
+            <class name="com.ei.pwwdseljava.onlineinvoice.tests.InvoiceEntryTest"/>
+            <class name="com.ei.pwwdseljava.onlineinvoice.tests.GoogleSearchTest"/>
+            <!-- Add more Playwright test classes here -->
+        </classes>
+    </test>
+
 </suite>

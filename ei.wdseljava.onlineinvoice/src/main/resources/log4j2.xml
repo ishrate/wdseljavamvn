@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-    <!-- Define Appenders (where logs go) -->
+    <Properties>
+        <!-- Default logs path if not provided -->
+        <Property name="logs.path">C:/TheGit/ei.wdseljava.onlineinvoice/logs</Property>
+    </Properties>
+
+    <!-- Define Appenders -->
     <Appenders>
         <!-- Console Appender -->
         <Console name="Console" target="SYSTEM_OUT">
@@ -8,33 +13,25 @@
         </Console>
 
         <!-- File Appender -->
-        <File name="File" fileName="logs/application.log">
+        <File name="File" fileName="${logs.path}/application.log">
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %logger{36} - %msg%n%throwable</Pattern>
             </PatternLayout>
         </File>
-        
-        <!--<SMTP name="Email" subject="Test Execution Report" to="eamon.ishrat@gmail.com" from="no-reply@example.com" smtpHost="smtp.example.com">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
-            <SMTPServer smtpHost="smtp.example.com" smtpPort="587" smtpUsername="your-smtp-username" smtpPassword="your-smtp-password"/>
-            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
-        </SMTP>-->
     </Appenders>
 
-    <!-- Define Loggers (what to log) -->
+    <!-- Define Loggers -->
     <Loggers>
-        <!-- Root logger: logs all messages with a level of INFO or higher -->
+        <!-- Root logger -->
         <Root level="info">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="File"/>
-           <!-- <AppenderRef ref="Email"/>-->
         </Root>
 
-        <!-- Custom logger for your specific package or class -->
+        <!-- Custom logger -->
         <Logger name="com.worksafe.onlineinvoice" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="File"/>
-            <!--<AppenderRef ref="Email"/>-->
         </Logger>
     </Loggers>
 </Configuration>
