@@ -1,6 +1,7 @@
 package com.ei.pwwdseljava.onlineinvoice.pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -49,7 +50,7 @@ public class CbLogin {
 	}
 
 	// Method to perform login
-	public void login(String url, String username, String password) {
+	public void login(String url, String username, String password) throws Exception {
 		try {
 			test.info("Navigating to URL: " + url);
 			driver.get(url);
@@ -70,7 +71,39 @@ public class CbLogin {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
 
 			test.info("Clicking close button.");
-			clickCloseButton();
+
+			Thread.sleep(4000); // Optional: replace with explicit wait in real tests
+
+			// XPath with text match and dynamic structure
+			By closeBtnLocator = By.xpath("//button[normalize-space()='Close']");
+
+			// Find elements
+			List<WebElement> closeButtons = driver.findElements(closeBtnLocator);
+
+			if (!closeButtons.isEmpty() && closeButtons.get(0).isDisplayed()) {
+				closeButtons.get(0).click();
+				System.out.println("✅ Popup closed successfully.");
+			} else {
+				System.out.println("ℹ️ No popup found or button not visible.");
+			}
+
+			Thread.sleep(4000);
+			By closeSpan = By.xpath("//span[contains(@class,'walkme-action-destroy') and text()='Close']");
+
+			List<WebElement> closeElements = driver.findElements(closeSpan);
+
+			if (!closeElements.isEmpty() && closeElements.get(0).isDisplayed()) {
+				closeElements.get(0).click();
+				System.out.println("✅ WalkMe popup closed.");
+			} else {
+				System.out.println("ℹ️ WalkMe popup not present.");
+			}
+
+			// clickCloseButton();
+			Thread.sleep(4000); // Optional: replace with explicit wait in real tests
+
+			// XPath with text match and dynamic structure
+
 			logger.info("Login process completed successfully.");
 			test.pass("Login process completed successfully.");
 		} catch (Exception e) {
