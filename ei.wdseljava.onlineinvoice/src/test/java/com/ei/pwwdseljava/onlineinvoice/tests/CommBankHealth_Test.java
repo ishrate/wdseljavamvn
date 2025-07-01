@@ -79,7 +79,7 @@ public class CommBankHealth_Test extends BaseClass {
 			logger.error("Error in loginTest: {}", e.getMessage(), e);
 			ExtentManager.captureScreenshot(driver, test);
 			test.fail("loginTest failed: " + e.getMessage());
-			throw e;
+			throw new RuntimeException("Error during loginTest", e);
 		}
 	}
 
@@ -93,7 +93,6 @@ public class CommBankHealth_Test extends BaseClass {
 			System.out.println("-->Starting invoice entry test with Practice: " + practice + ", Practitioner: "
 					+ practitioner + ", Patient: " + patient + ", Item: " + item);
 
-			// CbInvoiceEntry cbInvoiceEntry = new CbInvoiceEntry(driver, test);
 			cbInvoiceEntry.selectPractice(practice, practitioner);
 			cbInvoiceEntry.selectPatient(patient);
 			cbInvoiceEntry.selectItem(item);
@@ -105,7 +104,7 @@ public class CommBankHealth_Test extends BaseClass {
 			ExtentManager.captureScreenshot(driver, test);
 			test.fail("invoiceEntryTest failed: " + e.getMessage());
 			System.out.println("-->Error in invoiceEntryTest: " + e.getMessage());
-			throw e;
+			throw new RuntimeException("Error during invoiceEntryTest", e);
 		}
 	}
 
@@ -131,7 +130,7 @@ public class CommBankHealth_Test extends BaseClass {
 			logger.error("Error in quoteInvoiceSubmitTest: {}", e.getMessage(), e);
 			ExtentManager.captureScreenshot(driver, test);
 			test.fail("quoteInvoiceSubmitTest failed: " + e.getMessage());
-			throw e;
+			throw new RuntimeException("Error during quoteInvoiceSubmitTest", e);
 		}
 	}
 
