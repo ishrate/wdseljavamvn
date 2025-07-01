@@ -74,7 +74,7 @@ public class CbLogin {
 
 			Thread.sleep(4000); // Optional: replace with explicit wait in real tests
 
-			// XPath with text match and dynamic structure
+			// New popup
 			By closeBtnLocator = By.xpath("//button[normalize-space()='Close']");
 
 			// Find elements
@@ -82,11 +82,11 @@ public class CbLogin {
 
 			if (!closeButtons.isEmpty() && closeButtons.get(0).isDisplayed()) {
 				closeButtons.get(0).click();
-				System.out.println("✅ Popup closed successfully.");
+				System.out.println("Popup closed successfully.");
 			} else {
-				System.out.println("ℹ️ No popup found or button not visible.");
+				System.out.println("No popup found or button not visible.");
 			}
-
+                        //Old popup
 			Thread.sleep(4000);
 			By closeSpan = By.xpath("//span[contains(@class,'walkme-action-destroy') and text()='Close']");
 
@@ -94,9 +94,9 @@ public class CbLogin {
 
 			if (!closeElements.isEmpty() && closeElements.get(0).isDisplayed()) {
 				closeElements.get(0).click();
-				System.out.println("✅ WalkMe popup closed.");
+				System.out.println("popup closed.");
 			} else {
-				System.out.println("ℹ️ WalkMe popup not present.");
+				System.out.println("popup not present.");
 			}
 
 			// clickCloseButton();
